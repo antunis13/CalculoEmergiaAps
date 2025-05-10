@@ -1,0 +1,36 @@
+plugins {
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.13'
+    id 'java' // Adicione este plugin para habilitar sourceSets
+}
+
+repositories {
+    mavenCentral()
+}
+
+def javaFxVersion = '21.0.1'
+
+dependencies {
+    implementation "org.openjfx:javafx-controls:$javaFxVersion"
+    implementation "org.openjfx:javafx-fxml:$javaFxVersion"
+}
+
+application {
+    mainClass = 'com.calculoemergia.MainApp'
+}
+
+javafx {
+    version = javaFxVersion
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/java']
+        }
+        resources {
+            srcDirs = ['src/main/resources']
+        }
+    }
+}

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.calculoemergia.controller.SimulacaoController"
+            stylesheets="@../style/style.css" prefWidth="800" prefHeight="600">
+
+    <VBox alignment="CENTER" spacing="20.0" AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0"
+          AnchorPane.rightAnchor="0" AnchorPane.bottomAnchor="0">
+        <padding>
+            <Insets top="30" right="30" bottom="30" left="30"/>
+        </padding>
+
+        <Label text="Simulação de Cálculo de Emergia" styleClass="label-title" />
+
+        <GridPane hgap="20" vgap="15">
+            <columnConstraints>
+                <ColumnConstraints halignment="RIGHT" minWidth="150"/>
+                <ColumnConstraints halignment="LEFT" minWidth="300"/>
+            </columnConstraints>
+
+            <Label text="Valor da Energia (Joules):" GridPane.rowIndex="0" GridPane.columnIndex="0" styleClass="label"/>
+            <TextField fx:id="energiaField" GridPane.rowIndex="0" GridPane.columnIndex="1" styleClass="text-field"/>
+
+            <Label text="Transformidade (sej/j):" GridPane.rowIndex="1" GridPane.columnIndex="0" styleClass="label"/>
+            <TextField fx:id="transformidadeField" GridPane.rowIndex="1" GridPane.columnIndex="1" styleClass="text-field"/>
+
+            <Label text="Resultado da Emergia:" GridPane.rowIndex="2" GridPane.columnIndex="0" styleClass="label"/>
+            <Label fx:id="resultadoLabel" text="-" GridPane.rowIndex="2" GridPane.columnIndex="1" styleClass="label"/>
+        </GridPane>
+
+        <HBox spacing="15" alignment="CENTER">
+            <Button text="Calcular" onAction="#calcularEmergia" styleClass="button-primary"/>
+            <Button text="Voltar" onAction="#voltarTelaPrincipal" styleClass="button-primary"/>
+        </HBox>
+    </VBox>
+</AnchorPane>
+
+
